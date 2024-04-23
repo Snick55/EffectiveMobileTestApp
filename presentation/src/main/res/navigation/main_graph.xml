@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/tabsFragment">
+
+    <fragment
+        android:id="@+id/tabsFragment"
+        android:name="com.snick55.presentation.TabsFragment"
+        android:label="tabs_fragment"
+        tools:layout="@layout/tabs_fragment" >
+        <action
+            android:id="@+id/action_tabsFragment_to_searchBottomSheetFragment"
+            app:destination="@id/searchBottomSheetFragment" >
+
+            <argument
+                android:name="fromTown"
+                app:argType="string" />
+            <argument
+                android:name="toTown"
+                app:argType="string" />
+
+        </action>
+    </fragment>
+    <dialog
+        android:id="@+id/searchBottomSheetFragment"
+        android:name="com.snick55.presentation.search.SearchBottomSheetFragment"
+        android:label="SearchBottomSheetFragment" >
+        <argument
+            android:name="fromTown"
+            app:argType="string" />
+        <argument
+            android:name="toTown"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_searchBottomSheetFragment_to_searchWithCountryFragment"
+            app:destination="@id/searchWithCountryFragment" >
+
+
+        </action>
+        <action
+            android:id="@+id/action_searchBottomSheetFragment_to_hardWayFragment"
+            app:destination="@id/hardWayFragment" />
+        <action
+            android:id="@+id/action_searchBottomSheetFragment_to_anywhereFragment"
+            app:destination="@id/anywhereFragment" />
+        <action
+            android:id="@+id/action_searchBottomSheetFragment_to_hotTicketsFragment"
+            app:destination="@id/hotTicketsFragment" />
+        <action
+            android:id="@+id/action_searchBottomSheetFragment_to_weekendsFragment"
+            app:destination="@id/weekendsFragment" />
+    </dialog>
+    <fragment
+        android:id="@+id/searchWithCountryFragment"
+        android:name="com.snick55.presentation.search.SearchWithCountryFragment"
+        android:label="SearchWithCountryFragment" >
+        <argument
+            android:name="fromTown"
+            app:argType="string" />
+        <argument
+            android:name="toTown"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_searchWithCountryFragment_to_allTicketsFragment"
+            app:destination="@id/allTicketsFragment" >
+            <argument
+                android:name="towns"
+                app:argType="string" />
+            <argument
+                android:name="info"
+                app:argType="string" />
+        </action>
+
+    </fragment>
+    <fragment
+        android:id="@+id/anywhereFragment"
+        android:name="com.snick55.presentation.stubs.AnywhereFragment"
+        android:label="anywhere_fragment"
+        tools:layout="@layout/anywhere_fragment" />
+    <fragment
+        android:id="@+id/hardWayFragment"
+        android:name="com.snick55.presentation.stubs.HardWayFragment"
+        android:label="hard_way_fragment"
+        tools:layout="@layout/hard_way_fragment" />
+    <fragment
+        android:id="@+id/hotTicketsFragment"
+        android:name="com.snick55.presentation.stubs.HotTicketsFragment"
+        android:label="hot_tickets_fragment"
+        tools:layout="@layout/hot_tickets_fragment" />
+    <fragment
+        android:id="@+id/weekendsFragment"
+        android:name="com.snick55.presentation.stubs.WeekendsFragment"
+        android:label="weekends_fragment"
+        tools:layout="@layout/weekends_fragment" />
+    <fragment
+        android:id="@+id/allTicketsFragment"
+        android:name="com.snick55.presentation.allTickets.AllTicketsFragment"
+        android:label="AllTicketsFragment" >
+        <argument
+            android:name="towns"
+            app:argType="string" />
+        <argument
+            android:name="info"
+            app:argType="string" />
+    </fragment>
+</navigation>

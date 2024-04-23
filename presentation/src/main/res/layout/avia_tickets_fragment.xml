@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    android:fillViewport="true"
+    tools:context=".tickets.AviaTicketsFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/low_price_tickets"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:text="@string/find_tickets_title"
+            android:textColor="@color/gray_title"
+            android:textSize="28sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/heistCardView"
+            android:layout_width="match_parent"
+            android:layout_height="122dp"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="8dp"
+            android:backgroundTint="@color/gray_3"
+            app:cardCornerRadius="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/low_price_tickets">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:elevation="12dp"
+                android:layout_height="90dp"
+                android:layout_gravity="center"
+                android:layout_margin="8dp"
+                android:backgroundTint="@color/gray_4"
+                app:cardCornerRadius="16dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="13dp"
+                    android:contentDescription=""
+                    android:src="@drawable/ic_find" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+
+                    android:layout_marginStart="50dp"
+                    android:layout_marginEnd="8dp"
+                    android:orientation="vertical">
+
+                    <EditText
+                        android:textColor="@color/white"
+                        android:id="@+id/fromET"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/gray_4"
+                        android:hint="@string/from_hint"
+                        android:inputType="text"
+                        android:textColorHint="@color/gray_6" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/gray_5" />
+
+                    <EditText
+                        android:textColor="@color/white"
+                        android:id="@+id/toET"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/gray_4"
+                        android:hint="@string/to_hint"
+                        android:inputType="text"
+                        android:textColorHint="@color/gray_6" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </androidx.cardview.widget.CardView>
+
+
+        <TextView
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="40dp"
+            android:textSize="26sp"
+            android:id="@+id/musicTitle"
+            android:textColor="@color/white"
+            android:text="@string/music_title"
+            app:layout_constraintTop_toBottomOf="@id/heistCardView"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_marginTop="16dp"
+            tools:itemCount="3"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/offer_item"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/musicTitle"
+            android:layout_marginStart="16sp"
+            android:id="@+id/offersRV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</ScrollView>

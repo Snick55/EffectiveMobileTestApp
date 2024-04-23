@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="avia_tickets_title">Авиабилеты</string>
+    <string name="hotels_title">Отели</string>
+    <string name="short_info_title">Короче</string>
+    <string name="subscribers_title">Подписки</string>
+    <string name="profile_title">Профиль</string>
+    <string name="find_tickets_title">Поиск дешевых \n авиабилетов</string>
+    <string name="from_hint">Откуда-Москва</string>
+    <string name="to_hint">Куда-Турция</string>
+    <string name="music_title">Музыкально отлететь</string>
+    <string name="offer_price_title">"от %s ₽ "</string>
+</resources>

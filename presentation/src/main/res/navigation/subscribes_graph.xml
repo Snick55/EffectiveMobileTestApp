@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/subscribes_graph"
+    app:startDestination="@id/subscribesFragment">
+
+    <fragment
+        android:id="@+id/subscribesFragment"
+        android:name="com.snick55.presentation.stubs.SubscribesFragment"
+        android:label="SubscribesFragment" />
+</navigation>

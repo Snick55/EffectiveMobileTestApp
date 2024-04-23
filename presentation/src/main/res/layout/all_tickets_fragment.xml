@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/black">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/heistCardView"
+        android:layout_marginTop="32dp"
+        android:layout_marginHorizontal="16dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:backgroundTint="@color/gray_2"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"/>
+
+    <ImageView
+        android:id="@+id/goBackIV"
+        android:layout_marginStart="4dp"
+        app:layout_constraintBottom_toBottomOf="@id/heistCardView"
+        android:elevation="2dp"
+        app:tint="@color/blue"
+        android:src="@drawable/ic_back_arrow"
+        app:layout_constraintTop_toTopOf="@id/heistCardView"
+        app:layout_constraintStart_toStartOf="@id/heistCardView"
+        android:layout_width="24dp"
+        android:layout_height="24dp"/>
+
+    <TextView
+        android:id="@+id/townsTV"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp"
+        android:elevation="2dp"
+        app:layout_constraintTop_toTopOf="@id/heistCardView"
+        app:layout_constraintStart_toEndOf="@id/goBackIV"
+        android:textSize="16sp"
+        android:textColor="@color/white"
+        tools:text="Москва-Сочи"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/infoTV"
+        android:elevation="2dp"
+        app:layout_constraintTop_toBottomOf="@id/townsTV"
+        app:layout_constraintStart_toStartOf="@id/townsTV"
+        android:textSize="16sp"
+        android:textColor="@color/gray_6"
+        tools:text="23 февраля, 1 пассажир"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_marginTop="4dp"
+        android:id="@+id/ticketsRV"
+        tools:itemCount="5"
+        tools:listitem="@layout/ticket_item"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintTop_toBottomOf="@id/heistCardView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"/>
+
+    
+    <androidx.cardview.widget.CardView
+        android:id="@+id/floatFiltersCV"
+        android:backgroundTint="@color/blue"
+        android:layout_marginBottom="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginHorizontal="100dp"
+        android:layout_width="match_parent"
+        app:cardCornerRadius="16dp"
+        android:layout_height="40dp"/>
+
+
+    <ImageView
+        android:id="@+id/icFilter"
+        android:elevation="2dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintBottom_toBottomOf="@id/floatFiltersCV"
+        android:src="@drawable/ic_filters"
+        app:layout_constraintTop_toTopOf="@id/floatFiltersCV"
+        app:layout_constraintStart_toStartOf="@id/floatFiltersCV"
+        android:layout_width="16dp"
+        android:layout_height="16dp"/>
+
+    <TextView
+        android:layout_marginStart="4dp"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toTopOf="@id/icFilter"
+        app:layout_constraintStart_toEndOf="@id/icFilter"
+        android:elevation="2dp"
+        android:text="Фильтр"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <ImageView
+        android:id="@+id/icGraph"
+        android:elevation="2dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintEnd_toStartOf="@id/graphTV"
+        app:layout_constraintBottom_toBottomOf="@id/floatFiltersCV"
+        android:src="@drawable/ic_graphs"
+        app:layout_constraintTop_toTopOf="@id/floatFiltersCV"
+        android:layout_width="16dp"
+        android:layout_height="16dp"/>
+
+    <TextView
+        android:id="@+id/graphTV"
+        android:layout_marginEnd="12dp"
+        android:layout_marginStart="4dp"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@id/floatFiltersCV"
+       app:layout_constraintEnd_toEndOf="@id/floatFiltersCV"
+        app:layout_constraintTop_toTopOf="@id/floatFiltersCV"
+        android:elevation="2dp"
+        android:text="График цен"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

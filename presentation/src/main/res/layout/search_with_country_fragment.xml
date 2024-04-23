@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black">
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/heistCardView"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:layout_gravity="center"
+        android:layout_marginHorizontal="8dp"
+        android:layout_marginTop="40dp"
+        android:backgroundTint="@color/gray_4"
+        app:cardCornerRadius="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/goBackIV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="13dp"
+            android:contentDescription=""
+            android:src="@drawable/ic_back_arrow"
+            android:tint="@color/white"
+            app:tint="@color/white" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="40dp"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/fromET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/gray_4"
+                android:hint="@string/from_hint"
+                android:inputType="text"
+                android:textColor="@color/white"
+                android:textColorHint="@color/gray_6" />
+
+
+
+            <EditText
+                android:layout_marginTop="1dp"
+                android:id="@+id/toET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/gray_4"
+                android:hint="@string/to_hint"
+                android:inputType="text"
+                android:textColor="@color/white"
+                android:textColorHint="@color/gray_6" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_marginEnd="20dp"
+            android:layout_marginStart="40dp"
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/gray_5" />
+
+        <ImageView
+            android:id="@+id/swipeIV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|center_vertical"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="15dp"
+            android:contentDescription=""
+            android:src="@drawable/ic_swipe"
+            android:tint="@color/white"
+            app:tint="@color/white" />
+
+        <ImageView
+            android:id="@+id/clearIV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|center_vertical"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="15dp"
+            android:contentDescription=""
+            android:src="@drawable/ic_union"
+            android:tint="@color/white"
+            app:tint="@color/white" />
+
+    </androidx.cardview.widget.CardView>
+
+
+    <HorizontalScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:fillViewport="true"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/heistCardView">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:orientation="horizontal">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/backTicketBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="4dp"
+                android:backgroundTint="@color/gray_3"
+                android:text="обратно"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                app:cornerRadius="16dp"
+                app:icon="@drawable/ic_add"
+                app:iconGravity="start"
+                app:iconTint="@color/white" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/dateBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="4dp"
+                android:backgroundTint="@color/gray_3"
+                android:textAllCaps="false"
+                app:iconTint="@color/white"
+                android:textColor="@color/white"
+                app:cornerRadius="16dp"
+                tools:text="24 фев.сб" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/countPassBtn"
+                app:icon="@drawable/ic_pass"
+                app:iconGravity="textStart"
+                app:iconTint="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/gray_3"
+                android:text="1,эконом"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                app:cornerRadius="16dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/filtersBtn"
+                app:iconTint="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="4dp"
+                android:backgroundTint="@color/gray_3"
+                android:text="фильтры"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                app:cornerRadius="16dp"
+                app:icon="@drawable/ic_filters"
+                app:iconGravity="textStart" />
+        </LinearLayout>
+    </HorizontalScrollView>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/lowerCardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/gray_1"
+        app:cardCornerRadius="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/scrollView">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="8dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Прямые рейсы"
+                android:textColor="@color/white"
+                android:textSize="24sp" />
+
+            <LinearLayout
+
+                android:id="@+id/stambul"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:backgroundTint="@color/red"
+                    app:cardCornerRadius="24dp" />
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/firstTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        tools:text="Уральские авиалинии" />
+
+                    <TextView
+                        android:id="@+id/firstTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:textColor="@color/white"
+                        tools:text="07:00  09:10   10:00  11:00  12:00  13:00  12:00 1300 14     " />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="2dp"
+                android:background="@color/gray_5" />
+
+            <LinearLayout
+                android:id="@+id/sochi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:backgroundTint="@color/blue"
+                    app:cardCornerRadius="24dp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/secondTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        tools:text="Победа" />
+
+                    <TextView
+                        android:id="@+id/secondTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:textColor="@color/white"
+                        tools:text="07:00  09:10   10:00  11:00  12:00  13:00  12:00 1300 14     " />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="2dp"
+                android:background="@color/gray_5" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <androidx.cardview.widget.CardView
+                    android:backgroundTint="@color/white"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    app:cardCornerRadius="24dp" />
+
+                <LinearLayout
+                    android:id="@+id/phuket"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/thirdTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="NordStar"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/thirdTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:textColor="@color/white"
+                        tools:text="07:00  09:10   10:00  11:00  12:00  13:00  12:00 1300 14     " />
+
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="4dp"
+                android:background="@color/gray_5" />
+
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="4dp"
+                android:backgroundTint="@color/gray_1"
+                android:text="Показать все"
+                android:textColor="@color/dark_blue"
+                android:textSize="21sp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/firstPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="8dp"
+            tools:text="2 300 >"
+            android:textColor="@color/blue" />
+
+        <TextView
+            android:id="@+id/secondPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|center_vertical"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="22dp"
+            tools:text="2300 >"
+            android:textColor="@color/blue" />
+
+        <TextView
+            android:id="@+id/thirdPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|center_vertical"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="8dp"
+            tools:text="2300 >"
+            android:textColor="@color/blue" />
+
+    </androidx.cardview.widget.CardView>
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/showAllTicketsBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/blue"
+        android:text="Посмотреть все билеты"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="16dp"
+        app:cornerRadius="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lowerCardView" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_marginHorizontal="16dp"
+        app:cardCornerRadius="8dp"
+        android:layout_marginTop="12dp"
+        android:backgroundTint="@color/gray_2"
+        android:layout_width="match_parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/showAllTicketsBtn"
+        android:layout_height="51dp">
+
+       <LinearLayout
+           android:layout_marginHorizontal="16dp"
+           android:layout_gravity="center_vertical"
+           android:orientation="horizontal"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content">
+
+           <ImageView
+               android:src="@drawable/ic_notify"
+               android:tint="@color/blue"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"/>
+
+           <TextView
+               android:layout_marginStart="8dp"
+               android:textSize="16sp"
+               android:textColor="@color/white"
+               android:text="Подписка на цену"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"/>
+
+       </LinearLayout>
+
+        <com.google.android.material.materialswitch.MaterialSwitch
+            style="@style/TextAppearance.AppCompat.Widget.Switch"
+            android:layout_marginEnd="8dp"
+            android:layout_gravity="center_vertical|end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </androidx.cardview.widget.CardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
